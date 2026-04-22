@@ -66,4 +66,4 @@ pyinstaller --noconfirm --noconsole --name "Multi_File_Converter" --collect-all 
 - Tính năng chuyển đổi âm thanh đã được tích hợp sẵn lõi FFmpeg trong thư mục `bin/`, bạn không cần cài đặt thêm gì bên ngoài.
 
 ---
-**Phát triển bởi Antigravity AI Coding Assistant** 🚀
+**Phát triển bởi Minh Huy & Antigravity AI Coding Assistant** 🚀
