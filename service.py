@@ -1,7 +1,26 @@
 import os
 from PIL import Image, UnidentifiedImageError
+import sys
 from pydub import AudioSegment
 from pydub.exceptions import CouldntDecodeError
+
+# Cấu hình đường dẫn FFmpeg/FFprobe cho cả khi chạy script và khi đóng gói .exe
+if getattr(sys, 'frozen', False):
+    # Khi chạy từ file .exe (PyInstaller)
+    bundle_dir = sys._MEIPASS
+    bin_dir = os.path.join(bundle_dir, "bin")
+else:
+    # Khi chạy từ source code
+    bin_dir = os.path.join(os.path.dirname(__file__), "bin")
+
+# Thêm vào PATH để pydub tự nhận diện
+if os.path.exists(bin_dir):
+    os.environ["PATH"] += os.pathsep + bin_dir
+
+import docx
+from docx2pdf import convert as docx_to_pdf
+from pdf2docx import Converter as PdfConverter
+from PyPDF2 import PdfReader
 
 class ConverterService:
     @staticmethod
@@ -56,3 +75,47 @@ class ConverterService:
                            "đây là yêu cầu bắt buộc của thư viện Pydub.")
         except Exception as e:
             return False, f"Lỗi chưa xác định: {e}"
+
+    @staticmethod
+    def convert_document(input_path: str, output_path: str) -> tuple[bool, str]:
+        if not os.path.exists(input_path):
+            return False, "File tài liệu nguồn không tồn tại."
+        try:
+            in_ext = os.path.splitext(input_path)[1].lower()
+            out_ext = os.path.splitext(output_path)[1].lower()
+            
+            if in_ext == ".docx":
+                if out_ext == ".pdf":
+                    docx_to_pdf(input_path, output_path)
+                    return True, "Convert Word sang PDF thành công! ✅"
+                elif out_ext == ".txt":
+                    doc = docx.Document(input_path)
+                    with open(output_path, "w", encoding="utf-8") as f:
+                        for p in doc.paragraphs:
+                            f.write(p.text + "\n")
+                    return True, "Trích xuất Text từ Word thành công! ✅"
+                else:
+                    return False, f"Chưa hỗ trợ convert .docx sang {out_ext}."
+                    
+            elif in_ext == ".pdf":
+                if out_ext == ".docx":
+                    cv = PdfConverter(input_path)
+                    cv.convert(output_path)
+                    cv.close()
+                    return True, "Convert PDF sang Word thành công! ✅"
+                elif out_ext == ".txt":
+                    reader = PdfReader(input_path)
+                    with open(output_path, "w", encoding="utf-8") as f:
+                        for page in reader.pages:
+                            text = page.extract_text()
+                            if text:
+                                f.write(text + "\n")
+                    return True, "Trích xuất Text từ PDF thành công! ✅"
+                else:
+                    return False, f"Chưa hỗ trợ convert .pdf sang {out_ext}."
+                    
+            else:
+                return False, f"Định dạng đầu vào {in_ext} chưa được hỗ trợ."
+                
+        except Exception as e:
+            return False, f"Lỗi xử lý tài liệu: {e}"
