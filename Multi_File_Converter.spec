@@ -8,7 +8,9 @@ hiddenimports = [
     'modules.converter',
     'modules.organizer',
     'modules.duplicate_finder',
-    'core'
+    'modules.downloader',
+    'core',
+    'requests'
 ]
 
 tmp_ret = collect_all('tkinterdnd2')

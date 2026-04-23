@@ -10,6 +10,7 @@ Công cụ chuyển đổi định dạng tệp tin đa năng, giao diện thân
   - **Tài liệu**: Word (.docx) sang PDF/TXT, PDF sang Word/TXT.
 - **Sắp xếp thư mục (Folder Organizer)**: Tự động phân loại file vào các thư mục Images, Documents, Videos, Audio, Archives... giúp dọn dẹp không gian lưu trữ.
 - **Tìm file trùng lặp (Duplicate Finder)**: Quét và phát hiện các file trùng lặp nội dung (dựa trên mã Hash MD5), hỗ trợ xóa nhanh các bản sao để tiết kiệm bộ nhớ.
+- **Tải xuống từ URL (URL Downloader)**: Tải tệp tin từ internet thông qua URL, hỗ trợ streaming cho tệp lớn và tự động nhận diện tên file.
 - **Giao diện Dashboard hiện đại**: Thanh điều hướng bên trái (Sidebar) giúp chuyển đổi giữa các công cụ chuyên nghiệp.
 - **Kéo & Thả (Drag & Drop)**: Hỗ trợ kéo tệp trực tiếp từ thư mục vào ứng dụng.
 - **Xem trước trực quan**:
@@ -38,6 +39,12 @@ Công cụ chuyển đổi định dạng tệp tin đa năng, giao diện thân
 3. Nhấn **🔍 QUÉT FILE TRÙNG**. Hệ thống sẽ đánh dấu các bản sao (màu cam) và giữ lại bản gốc (màu xanh).
 4. Nhấn **🗑️ XÓA CÁC BẢN SAO** để xóa sạch dữ liệu thừa.
 
+### 4. Tải xuống từ URL (Downloader)
+1. Chọn công cụ **⬇️ Downloader** từ thanh Sidebar.
+2. Nhập (hoặc dán) đường dẫn **URL** của tệp tin cần tải.
+3. Chọn thư mục lưu tệp (mặc định là Downloads).
+4. Nhấn **🚀 BẮT ĐẦU TẢI XUỐNG**. Hệ thống sẽ hiển thị thanh tiến trình và báo cáo khi hoàn tất.
+
 ---
 
 ## 🛠 Hướng dẫn cài đặt (Cho lập trình viên)
@@ -51,7 +58,7 @@ Nếu bạn muốn chạy từ mã nguồn hoặc phát triển thêm:
 ### 2. Cài đặt thư viện
 Mở Terminal tại thư mục dự án và chạy lệnh:
 ```bash
-pip install Pillow pydub docx2pdf pdf2docx python-docx PyPDF2 pygame-ce tkinterdnd2
+pip install Pillow pydub docx2pdf pdf2docx python-docx PyPDF2 pygame-ce tkinterdnd2 requests
 ```
 
 ### 3. Chạy ứng dụng
