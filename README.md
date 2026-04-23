@@ -8,7 +8,9 @@ Công cụ chuyển đổi định dạng tệp tin đa năng, giao diện thân
   - **Hình ảnh**: JPG, PNG, WEBP, BMP.
   - **Âm thanh**: MP3, WAV, OGG, FLAC.
   - **Tài liệu**: Word (.docx) sang PDF/TXT, PDF sang Word/TXT.
-- **Giao diện hiện đại**: Chia bố cục thông minh với khung xem trước (Preview) tiện lợi.
+- **Sắp xếp thư mục (Folder Organizer)**: Tự động phân loại file vào các thư mục Images, Documents, Videos, Audio, Archives... giúp dọn dẹp không gian lưu trữ.
+- **Tìm file trùng lặp (Duplicate Finder)**: Quét và phát hiện các file trùng lặp nội dung (dựa trên mã Hash MD5), hỗ trợ xóa nhanh các bản sao để tiết kiệm bộ nhớ.
+- **Giao diện Dashboard hiện đại**: Thanh điều hướng bên trái (Sidebar) giúp chuyển đổi giữa các công cụ chuyên nghiệp.
 - **Kéo & Thả (Drag & Drop)**: Hỗ trợ kéo tệp trực tiếp từ thư mục vào ứng dụng.
 - **Xem trước trực quan**:
   - Xem ảnh Thumbnail.
@@ -20,17 +22,21 @@ Công cụ chuyển đổi định dạng tệp tin đa năng, giao diện thân
 
 ## 🚀 Hướng dẫn sử dụng (Cho người dùng)
 
-1. **Mở ứng dụng**: Chạy file `Multi_File_Converter.exe` (hoặc Shortcut trên Desktop).
-2. **Chọn file đầu vào**:
-   - Nhấn nút **📂 Chọn...** ở dòng đầu tiên.
-   - Hoặc đơn giản là **Kéo tệp tin** của bạn và thả vào bất kỳ đâu trên cửa sổ ứng dụng.
-3. **Xem trước (Tùy chọn)**:
-   - Nếu là ảnh, bạn sẽ thấy hình thu nhỏ.
-   - Nếu là nhạc, hãy nhấn **▶ Phát thử (Play)** để nghe.
-   - Nếu là văn bản, nội dung tóm tắt sẽ hiện ở khung bên phải.
-4. **Chọn định dạng đích**: Chọn đuôi file bạn muốn chuyển đổi sang ở danh sách thả xuống.
-5. **Chọn nơi lưu**: Mặc định phần mềm sẽ gợi ý lưu cùng thư mục với file gốc, bạn có thể nhấn **📁 Chọn...** để đổi chỗ khác.
-6. **Bắt đầu**: Nhấn nút **🚀 BẮT ĐẦU CONVERT** và đợi thông báo thành công!
+### 1. Chuyển đổi File (Converter)
+1. Chọn công cụ **🔄 Converter** từ thanh Sidebar.
+2. Nhấn nút **📂 Chọn...** hoặc **Kéo tệp tin** thả vào ứng dụng.
+3. Chọn định dạng đích và nơi lưu, sau đó nhấn **🚀 BẮT ĐẦU CONVERT**.
+
+### 2. Sắp xếp Thư mục (Organizer)
+1. Chọn công cụ **📂 Organizer** từ thanh Sidebar.
+2. Chọn thư mục cần dọn dẹp.
+3. Nhấn **⚡ SẮP XẾP NGAY** để tự động đưa file vào các thư mục con tương ứng.
+
+### 3. Tìm File trùng lặp (Duplicate Finder)
+1. Chọn công cụ **🔍 Duplicate Finder** từ thanh Sidebar.
+2. Chọn thư mục cần quét.
+3. Nhấn **🔍 QUÉT FILE TRÙNG**. Hệ thống sẽ đánh dấu các bản sao (màu cam) và giữ lại bản gốc (màu xanh).
+4. Nhấn **🗑️ XÓA CÁC BẢN SAO** để xóa sạch dữ liệu thừa.
 
 ---
 
@@ -56,7 +62,7 @@ python main.py
 ### 4. Đóng gói file .exe
 Sử dụng PyInstaller:
 ```bash
-pyinstaller --noconfirm --noconsole --name "Multi_File_Converter" --collect-all tkinterdnd2 --collect-all pygame --add-data "bin;bin" main.py
+pyinstaller Multi_File_Converter.spec --noconfirm
 ```
 
 ---
@@ -66,4 +72,5 @@ pyinstaller --noconfirm --noconsole --name "Multi_File_Converter" --collect-all 
 - Tính năng chuyển đổi âm thanh đã được tích hợp sẵn lõi FFmpeg trong thư mục `bin/`, bạn không cần cài đặt thêm gì bên ngoài.
 
 ---
+
 **Phát triển bởi Minh Huy & Antigravity AI Coding Assistant** 🚀

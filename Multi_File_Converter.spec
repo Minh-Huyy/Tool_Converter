@@ -3,12 +3,20 @@ from PyInstaller.utils.hooks import collect_all
 
 datas = [('bin', 'bin')]
 binaries = []
-hiddenimports = []
+hiddenimports = [
+    'modules',
+    'modules.converter',
+    'modules.organizer',
+    'modules.duplicate_finder',
+    'core'
+]
+
 tmp_ret = collect_all('tkinterdnd2')
 datas += tmp_ret[0]; binaries += tmp_ret[1]; hiddenimports += tmp_ret[2]
 tmp_ret = collect_all('pygame')
 datas += tmp_ret[0]; binaries += tmp_ret[1]; hiddenimports += tmp_ret[2]
-
+tmp_ret = collect_all('PIL')
+datas += tmp_ret[0]; binaries += tmp_ret[1]; hiddenimports += tmp_ret[2]
 
 a = Analysis(
     ['main.py'],
@@ -30,7 +38,7 @@ exe = EXE(
     a.scripts,
     [],
     exclude_binaries=True,
-    name='Multi_File_Converter',
+    name='Multi_Tool_Utility',
     debug=False,
     bootloader_ignore_signals=False,
     strip=False,
@@ -49,5 +57,5 @@ coll = COLLECT(
     strip=False,
     upx=True,
     upx_exclude=[],
-    name='Multi_File_Converter',
+    name='Multi_Tool_Utility',
 )
