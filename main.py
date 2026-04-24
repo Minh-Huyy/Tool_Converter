@@ -8,6 +8,8 @@ from modules.converter.ui import ConverterUI
 from modules.organizer.ui import OrganizerUI
 from modules.duplicate_finder.ui import DuplicateFinderUI
 from modules.downloader.ui import DownloaderUI
+from modules.compressor.ui import CompressorUI
+
 
 class MultiToolApp:
     def __init__(self):
@@ -23,6 +25,8 @@ class MultiToolApp:
         self.dashboard.register_tool("organizer", OrganizerUI)
         self.dashboard.register_tool("duplicate_finder", DuplicateFinderUI)
         self.dashboard.register_tool("downloader", DownloaderUI)
+        self.dashboard.register_tool("compressor", CompressorUI)
+
         
         # Mở công cụ mặc định
         self.dashboard.switch_tool("converter")

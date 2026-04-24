@@ -4,7 +4,8 @@ import shutil
 class FileOrganizerService:
     CATEGORIES = {
         "Images": [".jpg", ".jpeg", ".png", ".gif", ".bmp", ".webp", ".tiff", ".svg", ".ico"],
-        "Documents": [".pdf", ".docx", ".doc", ".txt", ".xlsx", ".xls", ".pptx", ".ppt", ".csv", ".rtf"],
+        "Documents": [".pdf", ".docx", ".doc", ".xlsx", ".xls", ".pptx", ".ppt", ".csv", ".rtf"],
+        "Text": [".txt"],
         "Videos": [".mp4", ".mkv", ".avi", ".mov", ".wmv", ".flv", ".webm", ".m4v"],
         "Audio": [".mp3", ".wav", ".ogg", ".flac", ".aac", ".m4a", ".wma"],
         "Archives": [".zip", ".rar", ".7z", ".tar", ".gz", ".bz2"],

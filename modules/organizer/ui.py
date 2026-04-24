@@ -1,5 +1,6 @@
 import tkinter as tk
 from tkinter import filedialog, messagebox, scrolledtext
+from tkinterdnd2 import DND_FILES
 from .controller import OrganizerController
 
 class OrganizerUI(tk.Frame):
@@ -27,9 +28,19 @@ class OrganizerUI(tk.Frame):
         self.logs = scrolledtext.ScrolledText(main_frame, height=12, font=("Consolas", 9), state=tk.DISABLED)
         self.logs.pack(fill=tk.BOTH, expand=True)
 
+        # Drag & Drop
+        self.drop_target_register(DND_FILES)
+        self.dnd_bind('<<Drop>>', self.on_drop)
+
     def browse(self):
         p = filedialog.askdirectory()
         if p: self.path_var.set(p)
+
+    def on_drop(self, event):
+        path = event.data
+        if path.startswith('{') and path.endswith('}'):
+            path = path[1:-1]
+        self.path_var.set(path)
 
     def on_click(self):
         s, m, l = self.controller.handle_organize(self.path_var.get())

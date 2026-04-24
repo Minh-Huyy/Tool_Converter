@@ -38,3 +38,27 @@ class ConverterController:
 
         except Exception as e:
             return False, f"Lỗi hệ thống Controller: {str(e)}"
+
+    @classmethod
+    def handle_batch_convert(cls, input_paths: list[str], output_dir: str, target_ext: str) -> tuple[bool, str]:
+        if not input_paths or not output_dir or not target_ext:
+            return False, "Thiếu thông tin đầu vào (files, folder hoặc định dạng)."
+        
+        if not os.path.exists(output_dir):
+            os.makedirs(output_dir)
+            
+        success_count = 0
+        error_count = 0
+        
+        for in_path in input_paths:
+            file_name = os.path.basename(in_path)
+            name_only, _ = os.path.splitext(file_name)
+            out_path = os.path.join(output_dir, f"{name_only}_converted.{target_ext}")
+            
+            success, _ = cls.handle_convert(in_path, out_path)
+            if success:
+                success_count += 1
+            else:
+                error_count += 1
+                
+        return True, f"Hoàn tất! Thành công: {success_count}, Thất bại: {error_count}."

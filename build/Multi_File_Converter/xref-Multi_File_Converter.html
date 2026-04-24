@@ -263,6 +263,8 @@ imports:
  &#8226;   <a href="#linecache">linecache</a>
  &#8226;   <a href="#locale">locale</a>
  &#8226;   <a href="#modules">modules</a>
+ &#8226;   <a href="#modules.compressor">modules.compressor</a>
+ &#8226;   <a href="#modules.compressor.ui">modules.compressor.ui</a>
  &#8226;   <a href="#modules.converter">modules.converter</a>
  &#8226;   <a href="#modules.converter.ui">modules.converter.ui</a>
  &#8226;   <a href="#modules.downloader">modules.downloader</a>
@@ -26978,10 +26980,93 @@ imported by:
 <span class="moduletype">Package</span>  <div class="import">
 imported by:
     <a href="#main.py">main.py</a>
+ &#8226;   <a href="#modules.compressor">modules.compressor</a>
  &#8226;   <a href="#modules.converter">modules.converter</a>
  &#8226;   <a href="#modules.downloader">modules.downloader</a>
  &#8226;   <a href="#modules.duplicate_finder">modules.duplicate_finder</a>
  &#8226;   <a href="#modules.organizer">modules.organizer</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="modules.compressor"></a>
+  <a target="code" href="-" type="text/plain"><tt>modules.compressor</tt></a>
+<span class="moduletype">NamespacePackage</span>  <div class="import">
+imports:
+    <a href="#modules">modules</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#main.py">main.py</a>
+ &#8226;   <a href="#modules.compressor.controller">modules.compressor.controller</a>
+ &#8226;   <a href="#modules.compressor.service">modules.compressor.service</a>
+ &#8226;   <a href="#modules.compressor.ui">modules.compressor.ui</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="modules.compressor.controller"></a>
+  <a target="code" href="///D:/Huy/Documents/Source_code/Project/Tool_Converter/modules/compressor/controller.py" type="text/plain"><tt>modules.compressor.controller</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#modules.compressor">modules.compressor</a>
+ &#8226;   <a href="#modules.compressor.service">modules.compressor.service</a>
+ &#8226;   <a href="#os">os</a>
+ &#8226;   <a href="#threading">threading</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#modules.compressor.ui">modules.compressor.ui</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="modules.compressor.service"></a>
+  <a target="code" href="///D:/Huy/Documents/Source_code/Project/Tool_Converter/modules/compressor/service.py" type="text/plain"><tt>modules.compressor.service</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#modules.compressor">modules.compressor</a>
+ &#8226;   <a href="#os">os</a>
+ &#8226;   <a href="#subprocess">subprocess</a>
+ &#8226;   <a href="#typing">typing</a>
+ &#8226;   <a href="#zipfile">zipfile</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#modules.compressor.controller">modules.compressor.controller</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="modules.compressor.ui"></a>
+  <a target="code" href="///D:/Huy/Documents/Source_code/Project/Tool_Converter/modules/compressor/ui.py" type="text/plain"><tt>modules.compressor.ui</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#modules.compressor">modules.compressor</a>
+ &#8226;   <a href="#modules.compressor.controller">modules.compressor.controller</a>
+ &#8226;   <a href="#os">os</a>
+ &#8226;   <a href="#re">re</a>
+ &#8226;   <a href="#tkinter">tkinter</a>
+ &#8226;   <a href="#tkinter.filedialog">tkinter.filedialog</a>
+ &#8226;   <a href="#tkinter.messagebox">tkinter.messagebox</a>
+ &#8226;   <a href="#tkinter.ttk">tkinter.ttk</a>
+ &#8226;   <a href="#tkinterdnd2">tkinterdnd2</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#main.py">main.py</a>
 
   </div>
 
@@ -27063,6 +27148,7 @@ imports:
  &#8226;   <a href="#modules.converter.controller">modules.converter.controller</a>
  &#8226;   <a href="#os">os</a>
  &#8226;   <a href="#pygame">pygame</a>
+ &#8226;   <a href="#re">re</a>
  &#8226;   <a href="#tkinter">tkinter</a>
  &#8226;   <a href="#tkinter.filedialog">tkinter.filedialog</a>
  &#8226;   <a href="#tkinter.messagebox">tkinter.messagebox</a>
@@ -27149,6 +27235,7 @@ imports:
  &#8226;   <a href="#tkinter.filedialog">tkinter.filedialog</a>
  &#8226;   <a href="#tkinter.messagebox">tkinter.messagebox</a>
  &#8226;   <a href="#tkinter.ttk">tkinter.ttk</a>
+ &#8226;   <a href="#tkinterdnd2">tkinterdnd2</a>
 
   </div>
   <div class="import">
@@ -27186,6 +27273,7 @@ imported by:
 imports:
     <a href="#modules.duplicate_finder">modules.duplicate_finder</a>
  &#8226;   <a href="#modules.duplicate_finder.service">modules.duplicate_finder.service</a>
+ &#8226;   <a href="#os">os</a>
 
   </div>
   <div class="import">
@@ -27204,6 +27292,7 @@ imports:
     <a href="#hashlib">hashlib</a>
  &#8226;   <a href="#modules.duplicate_finder">modules.duplicate_finder</a>
  &#8226;   <a href="#os">os</a>
+ &#8226;   <a href="#shutil">shutil</a>
 
   </div>
   <div class="import">
@@ -27226,6 +27315,7 @@ imports:
  &#8226;   <a href="#tkinter.filedialog">tkinter.filedialog</a>
  &#8226;   <a href="#tkinter.messagebox">tkinter.messagebox</a>
  &#8226;   <a href="#tkinter.ttk">tkinter.ttk</a>
+ &#8226;   <a href="#tkinterdnd2">tkinterdnd2</a>
 
   </div>
   <div class="import">
@@ -27301,6 +27391,7 @@ imports:
  &#8226;   <a href="#tkinter.filedialog">tkinter.filedialog</a>
  &#8226;   <a href="#tkinter.messagebox">tkinter.messagebox</a>
  &#8226;   <a href="#tkinter.scrolledtext">tkinter.scrolledtext</a>
+ &#8226;   <a href="#tkinterdnd2">tkinterdnd2</a>
 
   </div>
   <div class="import">
@@ -35424,11 +35515,15 @@ imported by:
  &#8226;   <a href="#lzma">lzma</a>
  &#8226;   <a href="#main.py">main.py</a>
  &#8226;   <a href="#mimetypes">mimetypes</a>
+ &#8226;   <a href="#modules.compressor.controller">modules.compressor.controller</a>
+ &#8226;   <a href="#modules.compressor.service">modules.compressor.service</a>
+ &#8226;   <a href="#modules.compressor.ui">modules.compressor.ui</a>
  &#8226;   <a href="#modules.converter.controller">modules.converter.controller</a>
  &#8226;   <a href="#modules.converter.service">modules.converter.service</a>
  &#8226;   <a href="#modules.converter.ui">modules.converter.ui</a>
  &#8226;   <a href="#modules.downloader.service">modules.downloader.service</a>
  &#8226;   <a href="#modules.downloader.ui">modules.downloader.ui</a>
+ &#8226;   <a href="#modules.duplicate_finder.controller">modules.duplicate_finder.controller</a>
  &#8226;   <a href="#modules.duplicate_finder.service">modules.duplicate_finder.service</a>
  &#8226;   <a href="#modules.duplicate_finder.ui">modules.duplicate_finder.ui</a>
  &#8226;   <a href="#modules.organizer.service">modules.organizer.service</a>
@@ -43338,6 +43433,8 @@ imported by:
  &#8226;   <a href="#lxml.html.diff">lxml.html.diff</a>
  &#8226;   <a href="#lxml.html.soupparser">lxml.html.soupparser</a>
  &#8226;   <a href="#main.py">main.py</a>
+ &#8226;   <a href="#modules.compressor.ui">modules.compressor.ui</a>
+ &#8226;   <a href="#modules.converter.ui">modules.converter.ui</a>
  &#8226;   <a href="#modules.downloader.service">modules.downloader.service</a>
  &#8226;   <a href="#ntpath">ntpath</a>
  &#8226;   <a href="#numpy._core._internal">numpy._core._internal</a>
@@ -47877,6 +47974,7 @@ imported by:
  &#8226;   <a href="#ctypes.util">ctypes.util</a>
  &#8226;   <a href="#http.server">http.server</a>
  &#8226;   <a href="#jaraco.context">jaraco.context</a>
+ &#8226;   <a href="#modules.duplicate_finder.service">modules.duplicate_finder.service</a>
  &#8226;   <a href="#modules.organizer.service">modules.organizer.service</a>
  &#8226;   <a href="#multiprocessing.util">multiprocessing.util</a>
  &#8226;   <a href="#numpy.f2py._backends._distutils">numpy.f2py._backends._distutils</a>
@@ -48490,6 +48588,7 @@ imported by:
  &#8226;   <a href="#fire.formatting_windows">fire.formatting_windows</a>
  &#8226;   <a href="#http.server">http.server</a>
  &#8226;   <a href="#jaraco.context">jaraco.context</a>
+ &#8226;   <a href="#modules.compressor.service">modules.compressor.service</a>
  &#8226;   <a href="#multiprocessing.popen_spawn_win32">multiprocessing.popen_spawn_win32</a>
  &#8226;   <a href="#multiprocessing.util">multiprocessing.util</a>
  &#8226;   <a href="#numpy.f2py">numpy.f2py</a>
@@ -50188,6 +50287,7 @@ imported by:
  &#8226;   <a href="#http.cookiejar">http.cookiejar</a>
  &#8226;   <a href="#importlib.util">importlib.util</a>
  &#8226;   <a href="#logging">logging</a>
+ &#8226;   <a href="#modules.compressor.controller">modules.compressor.controller</a>
  &#8226;   <a href="#modules.downloader.controller">modules.downloader.controller</a>
  &#8226;   <a href="#more_itertools.more">more_itertools.more</a>
  &#8226;   <a href="#multiprocessing.context">multiprocessing.context</a>
@@ -50398,6 +50498,7 @@ imports:
 imported by:
     <a href="#core.dashboard">core.dashboard</a>
  &#8226;   <a href="#main.py">main.py</a>
+ &#8226;   <a href="#modules.compressor.ui">modules.compressor.ui</a>
  &#8226;   <a href="#modules.converter.ui">modules.converter.ui</a>
  &#8226;   <a href="#modules.downloader.ui">modules.downloader.ui</a>
  &#8226;   <a href="#modules.duplicate_finder.ui">modules.duplicate_finder.ui</a>
@@ -50486,7 +50587,8 @@ imports:
   </div>
   <div class="import">
 imported by:
-    <a href="#modules.converter.ui">modules.converter.ui</a>
+    <a href="#modules.compressor.ui">modules.compressor.ui</a>
+ &#8226;   <a href="#modules.converter.ui">modules.converter.ui</a>
  &#8226;   <a href="#modules.downloader.ui">modules.downloader.ui</a>
  &#8226;   <a href="#modules.duplicate_finder.ui">modules.duplicate_finder.ui</a>
  &#8226;   <a href="#modules.organizer.ui">modules.organizer.ui</a>
@@ -50508,7 +50610,8 @@ imports:
   </div>
   <div class="import">
 imported by:
-    <a href="#modules.converter.ui">modules.converter.ui</a>
+    <a href="#modules.compressor.ui">modules.compressor.ui</a>
+ &#8226;   <a href="#modules.converter.ui">modules.converter.ui</a>
  &#8226;   <a href="#modules.downloader.ui">modules.downloader.ui</a>
  &#8226;   <a href="#modules.duplicate_finder.ui">modules.duplicate_finder.ui</a>
  &#8226;   <a href="#modules.organizer.ui">modules.organizer.ui</a>
@@ -50567,6 +50670,7 @@ imports:
   <div class="import">
 imported by:
     <a href="#core.dashboard">core.dashboard</a>
+ &#8226;   <a href="#modules.compressor.ui">modules.compressor.ui</a>
  &#8226;   <a href="#modules.converter.ui">modules.converter.ui</a>
  &#8226;   <a href="#modules.downloader.ui">modules.downloader.ui</a>
  &#8226;   <a href="#modules.duplicate_finder.ui">modules.duplicate_finder.ui</a>
@@ -50588,7 +50692,11 @@ imports:
   <div class="import">
 imported by:
     <a href="#main.py">main.py</a>
+ &#8226;   <a href="#modules.compressor.ui">modules.compressor.ui</a>
  &#8226;   <a href="#modules.converter.ui">modules.converter.ui</a>
+ &#8226;   <a href="#modules.downloader.ui">modules.downloader.ui</a>
+ &#8226;   <a href="#modules.duplicate_finder.ui">modules.duplicate_finder.ui</a>
+ &#8226;   <a href="#modules.organizer.ui">modules.organizer.ui</a>
  &#8226;   <a href="#tkinterdnd2">tkinterdnd2</a>
  &#8226;   <a href="#tkinterdnd2.TkinterDnD">tkinterdnd2.TkinterDnD</a>
 
@@ -51590,6 +51698,7 @@ imported by:
  &#8226;   <a href="#importlib.resources.abc">importlib.resources.abc</a>
  &#8226;   <a href="#jaraco.context">jaraco.context</a>
  &#8226;   <a href="#jaraco.functools">jaraco.functools</a>
+ &#8226;   <a href="#modules.compressor.service">modules.compressor.service</a>
  &#8226;   <a href="#modules.downloader.service">modules.downloader.service</a>
  &#8226;   <a href="#numpy._typing">numpy._typing</a>
  &#8226;   <a href="#numpy._typing._array_like">numpy._typing._array_like</a>
@@ -55658,6 +55767,7 @@ imported by:
  &#8226;   <a href="#docx.opc.phys_pkg">docx.opc.phys_pkg</a>
  &#8226;   <a href="#importlib.metadata">importlib.metadata</a>
  &#8226;   <a href="#importlib.resources.readers">importlib.resources.readers</a>
+ &#8226;   <a href="#modules.compressor.service">modules.compressor.service</a>
  &#8226;   <a href="#numpy.lib._npyio_impl">numpy.lib._npyio_impl</a>
  &#8226;   <a href="#pyi_rth_inspect.py">pyi_rth_inspect.py</a>
  &#8226;   <a href="#pymupdf">pymupdf</a>

@@ -9,6 +9,7 @@ hiddenimports = [
     'modules.organizer',
     'modules.duplicate_finder',
     'modules.downloader',
+    'modules.compressor',
     'core',
     'requests'
 ]

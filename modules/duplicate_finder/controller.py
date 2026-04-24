@@ -1,16 +1,25 @@
+import os
 from .service import DuplicateFinderService
 
 class DuplicateFinderController:
-    @classmethod
-    def scan_for_duplicates(cls, folder_path: str):
-        if not folder_path: return False, "Vui lòng chọn thư mục.", {}
-        duplicates = DuplicateFinderService.find_duplicates(folder_path)
-        return True, "Scan hoàn tất.", duplicates
+    def __init__(self):
+        self.service = DuplicateFinderService()
 
-    @classmethod
-    def delete_duplicates(cls, file_paths: list):
-        if not file_paths: return False, "Không có file nào được chọn để xóa.", 0
-        count, errors = DuplicateFinderService.delete_files(file_paths)
+    def scan_for_duplicates(self, path: str, mode: str = "file") -> tuple[bool, str, dict]:
+        if not path or not os.path.exists(path):
+            return False, "Đường dẫn không hợp lệ!", {}
+            
+        try:
+            if mode == "folder":
+                data = self.service.find_duplicate_folders(path)
+            else:
+                data = self.service.find_duplicates(path)
+            return True, "Thành công", data
+        except Exception as e:
+            return False, f"Lỗi: {str(e)}", {}
+
+    def delete_duplicates(self, paths: list, is_folder: bool = False) -> tuple[bool, str, int]:
+        count, errors = self.service.delete_items(paths, is_folder)
         if errors:
-            return False, f"Đã xóa {count} file, nhưng gặp {len(errors)} lỗi.", count
-        return True, f"Đã xóa thành công {count} file trùng lặp.", count
+            return False, f"Đã xóa {count} mục. Lỗi: {'; '.join(errors)}", count
+        return True, f"Đã xóa thành công {count} mục.", count

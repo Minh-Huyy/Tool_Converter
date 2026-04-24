@@ -1,6 +1,7 @@
 import os
 import tkinter as tk
 from tkinter import ttk, filedialog, messagebox
+from tkinterdnd2 import DND_FILES
 from .controller import DownloaderController
 
 class DownloaderUI(tk.Frame):
@@ -89,10 +90,25 @@ class DownloaderUI(tk.Frame):
         )
         self.btn_download.pack(fill=tk.X, pady=20)
 
+        # Drag & Drop
+        self.drop_target_register(DND_FILES)
+        self.dnd_bind('<<Drop>>', self.on_drop)
+
     def browse_path(self):
         path = filedialog.askdirectory()
         if path:
             self.path_var.set(path)
+
+    def on_drop(self, event):
+        data = event.data
+        if data.startswith('{') and data.endswith('}'):
+            data = data[1:-1]
+        
+        if os.path.isdir(data):
+            self.path_var.set(data)
+        else:
+            # Assume it's a URL or a file to download
+            self.url_var.set(data)
 
     def start_download(self):
         url = self.url_var.get().strip()
