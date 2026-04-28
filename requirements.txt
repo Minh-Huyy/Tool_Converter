@@ -1,0 +1,12 @@
+Pillow
+pydub
+docx2pdf
+pdf2docx
+python-docx
+PyPDF2
+pygame-ce
+tkinterdnd2
+requests
+pywin32
+cryptography
+pyperclip
