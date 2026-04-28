@@ -9,6 +9,7 @@ from modules.organizer.ui import OrganizerUI
 from modules.duplicate_finder.ui import DuplicateFinderUI
 from modules.downloader.ui import DownloaderUI
 from modules.compressor.ui import CompressorUI
+from modules.password_vault.ui import PasswordVaultUI
 
 
 class MultiToolApp:
@@ -26,6 +27,7 @@ class MultiToolApp:
         self.dashboard.register_tool("duplicate_finder", DuplicateFinderUI)
         self.dashboard.register_tool("downloader", DownloaderUI)
         self.dashboard.register_tool("compressor", CompressorUI)
+        self.dashboard.register_tool("password_vault", PasswordVaultUI)
 
         
         # Mở công cụ mặc định

@@ -1,0 +1,20 @@
+data/
+*.bin
+# Sensitive
+data/
+*.bin
+*.key
+.env
+
+# Python
+__pycache__/
+*.pyc
+
+# Build
+build/
+dist/
+*.spec
+
+# IDE
+.vscode/
+.idea/

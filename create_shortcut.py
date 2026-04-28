@@ -13,8 +13,8 @@ def create_shortcut():
         # Path to the Desktop
         desktop = os.path.join(os.path.join(os.environ['USERPROFILE']), 'Desktop')
         
-        # Shortcuts to update
-        shortcuts = ["Multi-Tool Utility Pro.lnk", "Multi-Tool Utility Hub.lnk"]
+        # Shortcut to update
+        shortcuts = ["Multi-Tool Utility Pro.lnk"]
 
         shell = win32com.client.Dispatch("WScript.Shell")
         

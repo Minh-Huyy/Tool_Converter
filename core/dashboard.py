@@ -23,6 +23,7 @@ class Dashboard(tk.Frame):
         self.add_nav_button("🔍 Duplicate Finder", "duplicate_finder")
         self.add_nav_button("⬇️ Downloader", "downloader")
         self.add_nav_button("📦 Compressor", "compressor")
+        self.add_nav_button("🔐 Password Vault", "password_vault")
         
         # Content Area
         self.content_area = tk.Frame(self, bg="white")
