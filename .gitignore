@@ -1,5 +1,3 @@
-data/
-*.bin
 # Sensitive
 data/
 *.bin
