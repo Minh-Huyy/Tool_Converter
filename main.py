@@ -10,6 +10,8 @@ from modules.duplicate_finder.ui import DuplicateFinderUI
 from modules.downloader.ui import DownloaderUI
 from modules.compressor.ui import CompressorUI
 from modules.password_vault.ui import PasswordVaultUI
+from modules.ahk_automation.ui import AHKAutomationUI
+
 
 
 class MultiToolApp:
@@ -28,6 +30,8 @@ class MultiToolApp:
         self.dashboard.register_tool("downloader", DownloaderUI)
         self.dashboard.register_tool("compressor", CompressorUI)
         self.dashboard.register_tool("password_vault", PasswordVaultUI)
+        self.dashboard.register_tool("ahk_automation", AHKAutomationUI)
+
 
         
         # Mở công cụ mặc định

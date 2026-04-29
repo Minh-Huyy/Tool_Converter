@@ -16,3 +16,11 @@ dist/
 # IDE
 .vscode/
 .idea/
+
+# Personal Settings & Generated Files
+ahk_settings.json
+active_automation.ahk
+
+# Executables & Binaries
+*.exe
+test_folder/
